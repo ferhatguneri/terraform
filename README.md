@@ -12,7 +12,7 @@ run shell script to install docker and docker-compose
 
 git clone https://github.com/ferhatguneri/terraform.git
 
-cd terraform
+cd terraform/aws-test-vm/
 
 Put your AK and SK into terraform.tfvars file.
 

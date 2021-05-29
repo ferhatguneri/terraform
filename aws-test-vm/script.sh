@@ -16,6 +16,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 #Install k3d
 wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+#Create k3d kubernetes cluster
+sudo k3d cluster create democluster
 
 #Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -29,6 +31,7 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 echo 'alias k=kubectl' >>~/.bashrc
 echo 'complete -F __start_kubectl k' >>~/.bashrc
 source ~/.bashrc
+sudo chown ubuntu:ubuntu /home/ubuntu/.kube/config
 
 #Install helm
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3

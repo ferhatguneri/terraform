@@ -67,7 +67,7 @@ echo 'alias k=kubectl' >>~/.bashrc
 echo 'complete -F __start_kubectl k' >>~/.bashrc
 source ~/.bashrc
 sudo chown ubuntu:ubuntu /home/ubuntu/.kube/config
-if [[ $(which helm) && $(helm version) ]]; then
+if [[ $(which kubectl) && $(kubectl version) ]]; then
      echo -e "\x1B[32m ============= Kubectl Installed OK \x1B[0m"
   else
      echo -e "\x1B[01;91m ============= Kubectl Not Installed \x1B[0m"

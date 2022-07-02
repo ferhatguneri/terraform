@@ -19,8 +19,9 @@ fi
 
 
 #Install Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose  > /dev/null
-sudo chmod +x /usr/local/bin/docker-compose  > /dev/null
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose > /dev/null
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose > /dev/null
+
 if [[ $(which docker-compose) && $(docker-compose version) ]]; then
      echo -e "\x1B[32m ============= docker-compose Installed OK \x1B[0m"
   else
